@@ -1,0 +1,254 @@
+<div class="container-fluid latest-update" *ngIf="updatesCopy[0]">
+  <div class="row">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <h1 class="text-center">Latest Updates</h1>
+        </div>
+      </div>
+
+      <div class="latest-update-select">
+        <select class="form-control" [formControl]="filterControl">
+          <option *ngFor="let type of updateTypes" [value]="type.id">{{ type.title }}</option>
+        </select>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12 col-sm-4" *ngFor="let item of updates | slice: 0: shownUpdatesQty">
+          <div class="update-box nutrition" *ngIf="item.type === 'nutrition'">
+            <h3>
+              <span>{{ username }}</span>
+              <!--<span>the conqueror</span>-->
+              <img src="assets/img/slider-list-item-4.png" alt="Icon" />
+            </h3>
+
+            <div class="update-box-img">
+              <prolific-user-avatar *ngIf="user.profile.userAvatar" [avatar]="user.profile.userAvatar"></prolific-user-avatar>
+              <img src="assets/img/avatar-update.png" class="img-responsive" width="100%"/>
+            </div>
+
+            <div class="clearfix bottom-box">
+              <h1 class="text-center">NUTRITION</h1>
+              <h3 class="text-center">
+                <span><img src="assets/img/oatmeal-icon.png" alt="Icon" />{{ item.fields.item_name }}</span>
+              </h3>
+              <p class="update-one">
+                <span>
+                    <span>portion</span>
+                <span>{{ item.fields.nf_serving_size_qty + ' ' + item.fields.nf_serving_size_unit }}</span>
+                </span>
+                <span>
+                    <span>calories</span>
+                <span>{{ item.fields.nf_calories }}</span>
+                </span>
+              </p>
+              <!--<p class="update-two">
+                  <span>
+                      <a href="#">
+                          <i class="fa fa-heart"></i>27
+                      </a>
+                  </span>
+                  <span>
+                      <a href="#">
+                          <i class="fa fa-share-alt"></i>3
+                      </a>
+                  </span>
+                  <span>
+                      <a href="#">
+                          <i class="fa fa-comment"></i>18
+                      </a>
+                  </span>
+              </p>-->
+            </div>
+          </div>
+          <div class="update-box activity" *ngIf="item.type === 'fitness'">
+            <h3>
+              <span>{{ username }}</span>
+              <!--<span>the conqueror</span>-->
+              <img src="assets/img/slider-list-item-5.png" alt="Icon" />
+            </h3>
+
+            <div class="update-box-img">
+              <prolific-user-avatar *ngIf="user.profile.userAvatar" [avatar]="user.profile.userAvatar"></prolific-user-avatar>
+              <img src="assets/img/avatar-update.png" class="img-responsive" width="100%"/>
+            </div>
+
+            <div class="clearfix bottom-box">
+              <h1 class="text-center">activity</h1>
+              <h3 class="text-center">
+                <span><img src="assets/img/oatmeal-icon.png" alt="Icon" />{{ activitiesList[item.activity].name }}</span>
+              </h3>
+              <p class="update-one">
+                <span>
+                    <span>active</span>
+                <span>{{ item.timeActiveInMinutes }} mins</span>
+                </span>
+                <span>
+                    <span>calories burned</span>
+                <span>{{ item.caloriesBurned }}</span>
+                </span>
+              </p>
+              <!--<p class="update-two">
+                <span>
+                    <a href="#">
+                        <i class="fa fa-heart"></i>27
+                    </a>
+                </span>
+                <span>
+                    <a href="#">
+                        <i class="fa fa-share-alt"></i>3
+                    </a>
+                </span>
+                <span>
+                    <a href="#">
+                        <i class="fa fa-comment"></i>18
+                    </a>
+                </span>
+              </p>-->
+            </div>
+          </div>
+        </div>
+        <!--<div class="col-xs-12 col-sm-4">
+            <div class="update-box nutrition">
+                <h3>
+                    <span>Oceansize Tree</span>
+                    <span>the conqueror</span>
+                    <img src="assets/img/slider-list-item-4.png" alt="Icon" />
+                </h3>
+
+                <div class="update-box-img">
+                  <prolific-user-avatar *ngIf="user.profile.userAvatar" [avatar]="user.profile.userAvatar"></prolific-user-avatar>
+                  <img src="assets/img/avatar-update.png" class="img-responsive" width="100%"/>
+                </div>
+
+                <div class="clearfix bottom-box">
+                    <h1 class="text-center">NUTRITION</h1>
+                    <h3 class="text-center">
+                        <span><img src="assets/img/oatmeal-icon.png" alt="Icon" />Oatmeal</span>
+                    </h3>
+                    <p class="update-one">
+                      <span>
+                          <span>portion</span>
+                          <span>2/3 cup</span>
+                      </span>
+                      <span>
+                          <span>calories</span>
+                          <span>204</span>
+                      </span>
+                    </p>
+                    <p class="update-two">
+                      <span>
+                          <a href="#">
+                              <i class="fa fa-heart"></i>27
+                          </a>
+                      </span>
+                      <span>
+                          <a href="#">
+                              <i class="fa fa-share-alt"></i>3
+                          </a>
+                      </span>
+                      <span>
+                          <a href="#">
+                              <i class="fa fa-comment"></i>18
+                          </a>
+                      </span>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-4">
+            <div class="update-box activity">
+                <h3>
+                    <span>Oceansize Tree</span>
+                    <span>the conqueror</span>
+                    <img src="assets/img/slider-list-item-5.png" alt="Icon" />
+                </h3>
+                <img src="assets/img/avatar-update.png" class="img-responsive" width="100%" />
+                <div class="clearfix bottom-box">
+                    <h1 class="text-center">activity</h1>
+                    <h3 class="text-center">
+                        <span><img src="assets/img/oatmeal-icon.png" alt="Icon" />Oatmeal</span>
+                    </h3>
+                    <p class="update-one">
+                      <span>
+                          <span>portion</span>
+                          <span>2/3 cup</span>
+                      </span>
+                      <span>
+                          <span>calories</span>
+                          <span>204</span>
+                      </span>
+                    </p>
+                    <p class="update-two">
+                      <span>
+                          <a href="#">
+                              <i class="fa fa-heart"></i>27
+                          </a>
+                      </span>
+                      <span>
+                          <a href="#">
+                              <i class="fa fa-share-alt"></i>3
+                          </a>
+                      </span>
+                      <span>
+                          <a href="#">
+                              <i class="fa fa-comment"></i>18
+                          </a>
+                      </span>
+                    </p>
+                </div>
+            </div>
+        </div>-->
+        <!-- <div class="col-xs-12 col-sm-4">
+            <div class="update-box events">
+                <h3>
+                    <span>Oceansize Tree</span>
+                    <span>the conqueror</span>
+                    <img src="assets/img/slider-list-item-3.png" alt="Icon" />
+                </h3>
+                <img src="assets/img/avatar-update.png" class="img-responsive" width="100%" />
+                <div class="clearfix bottom-box">
+                    <h1 class="text-center">event</h1>
+                    <h3 class="text-center">
+                        <span><img src="assets/img/oatmeal-icon.png" alt="Icon" />Oatmeal</span>
+                    </h3>
+                    <p class="update-one">
+                      <span>
+                          <span>portion</span>
+                          <span>2/3 cup</span>
+                      </span>
+                      <span>
+                          <span>calories</span>
+                          <span>204</span>
+                      </span>
+                    </p>
+                    <p class="update-two">
+                      <span>
+                          <a href="#">
+                              <i class="fa fa-heart"></i>27
+                          </a>
+                      </span>
+                      <span>
+                          <a href="#">
+                              <i class="fa fa-share-alt"></i>3
+                          </a>
+                      </span>
+                      <span>
+                          <a href="#">
+                              <i class="fa fa-comment"></i>18
+                          </a>
+                      </span>
+                    </p>
+                </div>
+            </div>
+        </div>-->
+      </div>
+      <div class="row">
+        <div class="col-xs-12 text-center">
+          <a class="load-more cursor-pointer" *ngIf="hasNextUpdatesPage" (click)="showNextActivitiesPage()">View More</a>
+          <button *ngIf="couldUpdatesBeCollapsed" (click)="collapseUpdates()">Collapse</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,46 @@
+<div class="container-fluid helth-center" *ngIf="lastActivity && lastNutrition">
+  <div class="row">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <h1 class="text-center">Health Center</h1>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12 col-sm-4">
+          <div class="clearfix activity">
+            <div class="progress-bar progress-red-21" data-percent="21" data-duration="1000" data-color="#f5d2d6,#ce3242">
+              <div class="inner-cont">21</div>
+            </div>
+
+            <h2 class="text-center">Activity</h2>
+            <h3 class="text-center">{{ activitiesList[lastActivity.activity].name }}</h3>
+          </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-4">
+          <div class="clearfix nutrition">
+            <div class="progress-bar progress-yl-21" data-percent="21" data-duration="1000" data-color="#eefad1,#a8be23">
+              <div class="inner-cont">21</div>
+            </div>
+
+            <h2 class="text-center">nutrition</h2>
+            <h3 class="text-center">{{ lastNutrition.fields.item_name }}</h3>
+          </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-4">
+          <div class="clearfix events">
+            <div class="progress-bar progress-bl-21" data-percent="21" data-duration="1000" data-color="#e5f7f7,#00afb0">
+              <div class="inner-cont">21</div>
+            </div>
+
+            <h2 class="text-center">events</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- HEALTH CENTER -->

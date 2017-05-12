@@ -1,0 +1,84 @@
+.avatar-container {
+  padding: 61px 140px 88px;
+  min-height: 685px;
+  background: url(../../../../assets/img/just-a-laptop.png) no-repeat scroll center bottom;
+  background-size: inherit;
+}
+
+.design-avatar{
+  display: table;
+  width: 100%;
+  height: 536px;
+  position: relative;
+  text-align: center;
+  @media (min-width: 1200px){
+    background: url(../../../../assets/img/reg-items-bg-3.png) no-repeat scroll left top;
+  }
+  .avatar-box{
+    position: relative;
+
+    .avatar-img{
+      display: inline-block;
+      position: relative;
+      .img-responsive {
+        position: relative;
+        width: 312px;
+        height: 472px;
+        left: 50%;
+      }
+      img{
+        margin-left: auto;
+        margin-right: auto;
+      }
+      @media (min-width: 1200px){
+        margin-right: 25px;
+      }
+      .img-responsive-item {
+        position: absolute;
+        left: -145px;
+        top: 17px;
+        width: 312px;
+        height: 472px;
+        background-size: cover !important;
+      }
+      .arrow{
+        background-color: transparent;
+        display: table;
+        height: 40px;
+        position: absolute;
+        text-align: center;
+        width: 40px;
+        i{
+          color: #ffffff;
+          display: table-cell;
+          font-size: 32px;
+          vertical-align: middle;
+        }
+        &.left{
+          right: 300px;
+          @media (max-width: 480px) {
+            right: 110px;
+          }
+        }
+        &.right{
+          left: 300px;
+          @media (max-width: 480px) {
+            left: 110px;
+          }
+        }
+        &.arrow-icon-1{
+          top: 85px;
+        }
+        &.arrow-icon-2{
+          bottom: 155px;
+        }
+        &.arrow-icon-3{
+          top: 350px;
+        }
+        &.arrow-icon-4{
+          top: 420px;
+        }
+      }
+    }
+  }
+}

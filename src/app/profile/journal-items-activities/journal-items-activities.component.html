@@ -1,0 +1,162 @@
+<div class="container">
+  <div class="row">
+    <form [formGroup]="journalActivitiesForm" (submit)="submit($event)">
+      <div class="col-sm-5">
+        <div class="clearfix form-group">
+          <label>Activity</label>
+          <select class="form-control selectpicker" formControlName="activity">
+            <option *ngFor="let item of listOfAllActivities" [value]="item.code">{{ item.name }}</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="col-sm-5">
+        <div class="clearfix form-group">
+          <label>Minutes</label>
+          <input type="number" class="form-control" formControlName="minutes">
+        </div>
+      </div>
+
+      <div class="col-sm-2">
+        <div class="clearfix form-group text-center">
+          <label></label>
+          <button type="submit" [disabled]="!journalActivitiesForm.valid">Submit</button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="table-responsive">
+        <div *ngIf="(activitiesService.activitiesAreLoading$ | async)">Loading...</div>
+
+        <table class="table" *ngIf="!(activitiesService.activitiesAreLoading$ | async)">
+          <tbody>
+          <tr *ngFor="let item of slicedUserActivities">
+            <td>
+              <span><img src="assets/img/soccer-icon.png" alt="Icon" /></span>
+              <span>{{ processedActivities[item.activity].name }}</span>
+            </td>
+            <td>
+              <span><i class="fa fa-calendar"></i></span>
+              <span>Date:</span>
+              <span>06/23/2016</span>
+            </td>
+            <td>
+              <span><i class="fa fa-map-marker"></i></span>
+              <span>Place</span>
+              <span>Sarasota, FL</span>
+            </td>
+          </tr>
+          <!--<tr>
+              <td>
+                  <span><img src="assets/img/soccer-icon.png" alt="Icon" /></span>
+                  <span>Soccer</span>
+              </td>
+              <td>
+                  <span><i class="fa fa-calendar"></i></span>
+                  <span>Date:</span>
+                  <span>06/23/2016</span>
+              </td>
+              <td>
+                  <span><i class="fa fa-map-marker"></i></span>
+                  <span>Place</span>
+                  <span>Sarasota, FL</span>
+              </td>
+          </tr>
+          <tr>
+              <td>
+                  <span><img src="assets/img/running-icon.png" alt="Icon" /></span>
+                  <span>Running</span>
+              </td>
+              <td>
+                  <span><i class="fa fa-calendar"></i></span>
+                  <span>Date:</span>
+                  <span>06/23/2016</span>
+              </td>
+              <td>
+                  <span><i class="fa fa-map-marker"></i></span>
+                  <span>Place</span>
+                  <span>Sarasota, FL</span>
+              </td>
+          </tr>
+          <tr>
+              <td>
+                  <span><img src="assets/img/basketball-icon.png" alt="Icon" /></span>
+                  <span>Basketball</span>
+              </td>
+              <td>
+                  <span><i class="fa fa-calendar"></i></span>
+                  <span>Date:</span>
+                  <span>06/23/2016</span>
+              </td>
+              <td>
+                  <span><i class="fa fa-map-marker"></i></span>
+                  <span>Place</span>
+                  <span>Sarasota, FL</span>
+              </td>
+          </tr>
+          <tr>
+              <td>
+                  <span><img src="assets/img/football-icon.png" alt="Icon" /></span>
+                  <span>Football</span>
+              </td>
+              <td>
+                  <span><i class="fa fa-calendar"></i></span>
+                  <span>Date:</span>
+                  <span>06/23/2016</span>
+              </td>
+              <td>
+                  <span><i class="fa fa-map-marker"></i></span>
+                  <span>Place</span>
+                  <span>Sarasota, FL</span>
+              </td>
+          </tr>
+          <tr>
+              <td>
+                  <span><img src="assets/img/cycle-icon.png" alt="Icon" /></span>
+                  <span>Cycling</span>
+              </td>
+              <td>
+                  <span><i class="fa fa-calendar"></i></span>
+                  <span>Date:</span>
+                  <span>06/23/2016</span>
+              </td>
+              <td>
+                  <span><i class="fa fa-map-marker"></i></span>
+                  <span>Place</span>
+                  <span>Sarasota, FL</span>
+              </td>
+          </tr>
+          <tr>
+              <td>
+                  <span><img src="assets/img/football-icon.png" alt="Icon" /></span>
+                  <span>Football</span>
+              </td>
+              <td>
+                  <span><i class="fa fa-calendar"></i></span>
+                  <span>Date:</span>
+                  <span>06/23/2016</span>
+              </td>
+              <td>
+                  <span><i class="fa fa-map-marker"></i></span>
+                  <span>Place</span>
+                  <span>Sarasota, FL</span>
+              </td>
+          </tr>-->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <prolific-pagination
+    [pages]="pages"
+    [currentPage]="currentPage"
+    [hasPreviousPage]="hasPreviousPage()"
+    [hasNextPage]="hasNextPage()"
+    (selectPreviousPage)="selectPreviousPage()"
+    (selectNextPage)="selectNextPage()"
+    (changePage)="changePage($event)"></prolific-pagination>
+</div>

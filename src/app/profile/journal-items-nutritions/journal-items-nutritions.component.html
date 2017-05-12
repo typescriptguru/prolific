@@ -1,0 +1,173 @@
+<div class="container">
+  <div class="row">
+    <form>
+      <div class="col-sm-5">
+        <div class="clearfix form-group">
+          <label>Meal Type</label>
+          <select class="form-control selectpicker">
+            <option selected>Breakfast</option>
+            <option>Lunch</option>
+            <option>Dinner</option>
+            <option>Snack</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="col-sm-5">
+        <div class="clearfix form-group">
+          <label>Food</label>
+          <dishes-autocomplete (selectItem)="selectDish($event)"></dishes-autocomplete>
+          <i class="fa fa-search"></i>
+        </div>
+      </div>
+
+      <div class="col-sm-2">
+        <div class="clearfix form-group text-center">
+          <label></label>
+          <button type="submit" (click)="addDish()">Submit</button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="table-responsive">
+        <div *ngIf="(nutritionsService.nutritionsAreLoading$ | async)">Loading...</div>
+
+        <table class="table" *ngIf="!(nutritionsService.nutritionsAreLoading$ | async)">
+          <tbody>
+            <tr *ngFor="let dish of slicedDishes">
+              <td>
+                <span><img src="assets/img/oatmeal-icon.png" alt="Icon" /></span>
+                <span>{{ dish.fields.item_name | substring:15 }}</span>
+              </td>
+              <td>
+                <span><img src="assets/img/portion-icon.png" alt="Icon" /></span>
+                <span>Portion:</span>
+                <span>{{ dish.fields.nf_serving_size_qty + ' ' + dish.fields.nf_serving_size_unit }}</span>
+              </td>
+              <td>
+                <span><img alt="Icon" src="assets/img/calories-icon.png" /></span>
+                <span>Calories</span>
+                <span>{{ dish.fields.nf_calories }}</span>
+              </td>
+            </tr>
+          <!-- <tr>
+               <td>
+                   <span><img src="assets/img/oatmeal-icon.png" alt="Icon" /></span>
+                   <span>Oatmeal</span>
+               </td>
+               <td>
+                   <span><img src="assets/img/portion-icon.png" alt="Icon" /></span>
+                   <span>Portion:</span>
+                   <span>2/3 Cup</span>
+               </td>
+               <td>
+                   <span><img alt="Icon" src="assets/img/calories-icon.png" /></span>
+                   <span>Calories</span>
+                   <span>204</span>
+               </td>
+           </tr>
+           <tr>
+               <td>
+                   <span><img src="assets/img/juice-icon.png" alt="Icon" /></span>
+                   <span>Juice</span>
+               </td>
+               <td>
+                   <span><img src="assets/img/portion-icon.png" alt="Icon" /></span>
+                   <span>Portion:</span>
+                   <span>1/4 Liter</span>
+               </td>
+               <td>
+                   <span><img alt="Icon" src="assets/img/calories-icon.png" /></span>
+                   <span>Calories</span>
+                   <span>204</span>
+               </td>
+           </tr>
+           <tr>
+               <td>
+                   <span><img src="assets/img/milk-icon.png" alt="Icon" /></span>
+                   <span>Milk</span>
+               </td>
+               <td>
+                   <span><img src="assets/img/portion-icon.png" alt="Icon" /></span>
+                   <span>Portion:</span>
+                   <span>1/4 Liter</span>
+               </td>
+               <td>
+                   <span><img alt="Icon" src="assets/img/calories-icon.png" /></span>
+                   <span>Calories</span>
+                   <span>204</span>
+               </td>
+           </tr>
+           <tr>
+               <td>
+                   <span><img src="assets/img/salad-icon.png" alt="Icon" /></span>
+                   <span>Salad</span>
+               </td>
+               <td>
+                   <span><img src="assets/img/portion-icon.png" alt="Icon" /></span>
+                   <span>Portion:</span>
+                   <span>50 g</span>
+               </td>
+               <td>
+                   <span><img alt="Icon" src="assets/img/calories-icon.png" /></span>
+                   <span>Calories</span>
+                   <span>204</span>
+               </td>
+           </tr>
+           <tr>
+               <td>
+                   <span><img src="assets/img/fries-icon.png" alt="Icon" /></span>
+                   <span>Fries</span>
+               </td>
+               <td>
+                   <span><img src="assets/img/portion-icon.png" alt="Icon" /></span>
+                   <span>Portion:</span>
+                   <span>200 g</span>
+               </td>
+               <td>
+                   <span><img alt="Icon" src="assets/img/calories-icon.png" /></span>
+                   <span>Calories</span>
+                   <span>204</span>
+               </td>
+           </tr>
+           <tr>
+               <td>
+                   <span><img src="assets/img/salad-icon.png" alt="Icon" /></span>
+                   <span>Salad</span>
+               </td>
+               <td>
+                   <span><img src="assets/img/portion-icon.png" alt="Icon" /></span>
+                   <span>Portion:</span>
+                   <span>50 g</span>
+               </td>
+               <td>
+                   <span><img alt="Icon" src="assets/img/calories-icon.png" /></span>
+                   <span>Calories</span>
+                   <span>204</span>
+               </td>
+           </tr>-->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="row" *ngIf="pages && pages[1]">
+    <div class="col-xs-12 text-center">
+      <span>
+        <button (click)="selectPreviousPage()" [disabled]="!hasPreviousPage()"><</button>
+      </span>
+
+      <span *ngFor="let page of pages">
+        <button (click)="changePage(page)" [disabled]="currentPage === page" [class.active]="currentPage === page">{{ page }}</button>
+      </span>
+
+      <span>
+        <button (click)="selectNextPage()" [disabled]="!hasNextPage()">></button>
+      </span>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,31 @@
+<header>
+  <authorized-header *ngIf="(profileService.profileAfterLoaded$ | async)" [profile]="profileService.profileAfterLoaded$ | async"></authorized-header>
+</header>
+
+<div class="container">
+  <div class="col-md-3">
+    <prolific-user-avatar *ngIf="profile" [routerLink]="['/profile/edit/avatar']" [avatar]="profile.userAvatar"></prolific-user-avatar>
+  </div>
+
+  <div class="col-md-9">
+    <h1>Avatar shop</h1>
+    <h3>Click at an apparel to try it on</h3>
+
+    <div class="clothes-list-wrapper" *ngIf="clothes && clothesTypes && selectedType">
+      <ul class="nav nav-tabs">
+        <li [class.active]="selectedType === type.code" *ngFor="let type of clothesTypes" (click)="selectedType = type.code">
+          <a class="cursor-pointer">{{ type.title }}</a>
+        </li>
+      </ul>
+
+      <div class="clothes-list row">
+        <div class="clothes-list-item col-md-2" *ngFor="let item of clothes[selectedType]" (click)="tryItem(item)">
+          <img [src]="item.url" class="clothes-list-item-img">
+          <div>{{ item.title }}</div>
+          <div class="clothes-list-item-price">{{ item.price }}$</div>
+          <button class="btn btn-primary" (click)="buyItem($event, item)">Buy</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

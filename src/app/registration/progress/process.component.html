@@ -1,0 +1,32 @@
+<div class="clearfix registration-process">
+  <div class="container">
+    <div class="row">
+      <ol class="clearfix carousel-indicators">
+        <li class="col-xs-12 col-sm-3" [ngClass]="{active: isActiveStep(0)}" (click)="showSlideByIndex(0)">
+          <div class="clearfix registration-process-box">
+            <img src="assets/img/reg-avatar-icon.png" alt="Big Icon" />
+            <p>Choose an Avatar</p>
+          </div>
+        </li>
+        <li class="col-xs-12 col-sm-3" [ngClass]="{active: isActiveStep(1)}" (click)="showSlideByIndex(1)">
+          <div class="clearfix registration-process-box">
+            <img src="assets/img/reg-custom-icon.png" alt="Big Icon" />
+            <p>Customize an Avatar</p>
+          </div>
+        </li>
+        <li class="col-xs-12 col-sm-3" [ngClass]="{active: isActiveStep(2)}" (click)="showSlideByIndex(2)">
+          <div class="clearfix registration-process-box">
+            <img src="assets/img/reg-user-icon.png" alt="Big Icon" />
+            <p>Select a Username</p>
+          </div>
+        </li>
+        <li class="col-xs-12 col-sm-3" [ngClass]="{active: isActiveStep(3)}" (click)="showSlideByIndex(3)">
+          <div class="clearfix registration-process-box">
+            <img src="assets/img/reg-complete-icon.png" alt="Big Icon" />
+            <p>Sign Up Complete</p>
+          </div>
+        </li>
+      </ol><!-- CAROUSEL INDICATORS-->
+    </div>
+  </div>
+</div><!-- REGISTRATION PROCESS END -->

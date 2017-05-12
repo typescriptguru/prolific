@@ -1,0 +1,97 @@
+@import '../../config';
+
+:host {
+  prolific-user-avatar {
+    margin: 73px auto 0;
+  }
+
+  .profile-header{
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-attachment: scroll;
+    min-height: 720px;
+    @media (max-width: 1200px) {
+      background-position: 42% bottom;
+    }
+
+    @media (max-width: 992px) {
+      min-height: auto;
+      background-position: 18% bottom;
+    }
+    .container{
+      position: relative;
+    }
+    .prof-info{
+      @media (max-width: 992px) {
+        background: rgba(255,255,255,0.8);
+        text-align: center;
+      }
+      @media (min-width: 992px){
+        padding-top: 200px;
+      }
+    }
+    h1{
+      color: #074b6e;
+      font-size: 36px;
+      @include font-varela-regular;
+      line-height: 1;
+      margin-bottom: 25px;
+      margin-top: 30px;
+      text-transform: uppercase;
+      word-break: break-all;
+      @media (min-width: 768px){
+        font-size: 40px;
+      }
+      @media (min-width: 992px){
+        font-size: 50px;
+      }
+      @media (min-width: 1200px){
+        font-size: 65px;
+      }
+    }
+    p{
+      color: #074b6e;
+      font-size: 24px;
+      @include font-varela-regular;
+      line-height: 1;
+      margin-bottom: 30px;
+      position: relative;
+      text-align: left;
+      @media (max-width: 992px) {
+        text-align: center;
+      }
+      @media (min-width: 768px){
+        font-size: 30px;
+      }
+      @media (min-width: 992px){
+        font-size: 36px;
+      }
+      @media (min-width: 1200px){
+        font-size: 48px;
+      }
+      span{
+        display: inline-block;
+        line-height: 1;
+      }
+      a{
+        color: #074b6e;
+        font-size: 18px;
+      }
+      img{
+        &.arrow-key{
+          display: none;
+          position: absolute;
+          right: 100%;
+          top: 0;
+          margin-right: 20px;
+          @media (min-width: 992px){
+            display: block;
+          }
+        }
+      }
+      &:last-child{
+        font-size: 18px;
+      }
+    }
+  }
+}

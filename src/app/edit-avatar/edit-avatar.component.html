@@ -1,0 +1,9 @@
+<header>
+  <authorized-header *ngIf="(profileService.profile$ | async)" [profile]="profileService.profile$ | async"></authorized-header>
+</header>
+
+<main class="clearfix">
+  <h1>Edit your avatar</h1>
+  <avatar-editor *ngIf="clothes" [singUpModel]="model" [avatarClothes]="avatarCustomizations"></avatar-editor>
+  <button (click)="submit()">Save</button>
+</main>

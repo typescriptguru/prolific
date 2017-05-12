@@ -1,0 +1,15 @@
+<div class="row" *ngIf="pages && pages[1]">
+  <div class="col-xs-12 text-center">
+      <span>
+        <button (click)="selectPreviousPage.emit()" [disabled]="!hasPreviousPage"><</button>
+      </span>
+
+    <span *ngFor="let page of pages">
+        <button (click)="changePage.emit(page)" [disabled]="currentPage === page" [class.active]="currentPage === page">{{ page }}</button>
+      </span>
+
+    <span>
+        <button (click)="selectNextPage.emit()" [disabled]="!hasNextPage">></button>
+      </span>
+  </div>
+</div>

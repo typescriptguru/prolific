@@ -1,0 +1,27 @@
+<div class="container-fluid profile-header" [ngStyle]="{ 'background-image': 'url(' + backgroundImages[currentBackgroundIndex] + ')' }">
+  <div class="row">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-5 col-xs-12">
+          <prolific-user-avatar [routerLink]="['/edit-avatar']" [avatar]="profile.userAvatar"></prolific-user-avatar>
+        </div>
+
+        <div class="col-md-7 col-xs-12 prof-info">
+          <h1>{{ profile?.username }}</h1>
+          <p>{{ profile?.title[0] }}</p>
+
+          <p>
+            <span *ngFor="let badge of profile.awardsEarned">
+              <img [src]="badge"/>
+            </span>
+          </p>
+
+          <p>
+            <img src="assets/img/left-arrow-bg.png" alt="Icon" class="arrow-key" />
+            <a class="cursor-pointer" (click)="changeBackground()">Change the Background</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

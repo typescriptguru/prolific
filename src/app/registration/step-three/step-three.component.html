@@ -1,0 +1,50 @@
+<div class="container">
+  <div class="col-xs-12">
+    <div class="clearfix items-title text-center">
+      <h1>Select a Username</h1>
+      <p>As you level up and earn points you will be able to unlock additional features for your avatar!</p>
+    </div><!-- ITEMS TITLE -->
+  </div>
+</div><!-- ITEMS TITLE -->
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="clearfix form-group">
+        <label>Your Favorite Animal:</label>
+
+        <select class="form-control selectpicker" (change)="selectedUsernameAnimal = $event.target.value; onChange()">
+          <option></option>
+          <option *ngFor="let usernameAnimal of animals" [value]="usernameAnimal">{{ usernameAnimal }}</option>
+        </select>
+      </div>
+
+      <div class="clearfix form-group">
+        <label>Your Favorite Activity:</label>
+
+        <select class="form-control selectpicker" (change)="selectedUsernameActivity = $event.target.value; onChange()">
+          <option></option>
+          <option *ngFor="let usernameActivity of activities" [value]="usernameActivity">{{ usernameActivity }}</option>
+        </select>
+      </div>
+
+      <div class="clearfix form-group">
+        <label>Your Favorite Action Hero:</label>
+
+        <select class="form-control selectpicker" (change)="selectedUsernameActionHero = $event.target.value; onChange()">
+          <option></option>
+          <option *ngFor="let usernameActionHero of actionHeroes" [value]="usernameActionHero">{{ usernameActionHero }}</option>
+        </select>
+      </div>
+
+      <div class="clearfix form-group">
+        <label>Enter your email:</label>
+        <input type="email" [formControl]="emailControl" name="email" class="form-control" [readonly]="readonlyEmail"/>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12 text-center">{{ model.username || '&nbsp;' }}</div>
+  </div>
+</div>

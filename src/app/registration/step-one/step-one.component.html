@@ -1,0 +1,55 @@
+<div class="container">
+  <div class="col-xs-12">
+    <div class="clearfix items-title text-center">
+      <h1>Choose an Avatar</h1>
+      <p>As you level up and earn points you will be able to unlock additional features for your avatar!</p>
+    </div><!-- ITEMS TITLE -->
+  </div>
+</div><!-- ITEMS TITLE -->
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-md-12">
+      <div class="row">
+        <div class="col-md-3 col-sm-6 col-xs-12" *ngFor="let avatar of avatarBases">
+          <label [attr.for]="avatar.name" [class.error]="avatar.lvlRequirement > 0" [class.active]="avatar.active">
+            <span class="img-box">
+              <span>
+                <img alt="Avatar Image" [src]="avatar.imageSource" height="156"/>
+              </span>
+            </span>
+            <input type="radio" [id]="avatar.name" name="choose-avatar" [value]="avatar.avatarBaseLookupID" (click)="clicked(avatar)"/>
+
+            <span class="mask">
+              <span>
+                <span>
+                  <span>Must be account</span>
+                  <span>level 5</span>
+                </span>
+              </span>
+            </span>
+          </label>
+        </div>
+
+        <!--<div class="col-xs-6" *ngIf='avatarBases[number] != null'>
+            <label [attr.for]="avatarBases[number].name" [class.error]="avatarBases[number].lvlRequirement > 0" >
+                <span class="img-box">
+                    <span>
+                        <img alt="Avatar Image" src="{{avatarBases[number].imageSource}}"  height="156" />
+                    </span>
+                </span>
+                <input type="radio" id="{{avatarBases[number].name}}" name="choose-avatar" value="B" (click)="clicked(avatarBases[number])" />
+                <span class="mask">
+                    <span>
+                        <span>
+                            <span>Must be account</span>
+                            <span>level 5</span>
+                        </span>
+                    </span>
+                </span>
+            </label>
+        </div>-->
+      </div>
+    </div>
+  </div>
+</div>

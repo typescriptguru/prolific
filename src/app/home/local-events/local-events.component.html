@@ -1,0 +1,44 @@
+<div class="col-md-6 col-xs-12 localevents-bg">
+  <div class="localevents">
+    <h1 class="text-left">Local Events</h1>
+    <p class="text-left">Upcoming events within the Boise community</p>
+    <div class="table-responsive">
+      <table class="table">
+        <tbody>
+        <tr>
+          <td>
+            <ul class="list-unstyled">
+              <li class="item-1" *ngFor="let event of events">
+                <a href="#">
+                  <img src="assets/img/event-icon-2.png" alt="Events Icon" />
+                    <span class="first">
+                      <span class="title">{{ event.EventTitle }}</span>
+                      <span>
+                          <span>
+                              <span><i class="fa fa-calendar"></i></span>
+                              <span>{{ event.EventDate }}</span>
+                          </span>
+                          <span>
+                              <span><i class="fa fa-map-marker"></i></span>
+                              <span>{{ event.EventLocationTitle }}</span>
+                          </span>
+                      </span>
+                    </span>
+                    <span class="second">
+                      <span><i class="fa fa-flag fa-2x"></i></span>
+                      <span>20</span>
+                    </span>
+                </a>
+              </li>
+            </ul>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="text-left">
+      <a>View More</a>
+    </p>
+  </div>
+</div><!-- LOCAL EVENTS -->

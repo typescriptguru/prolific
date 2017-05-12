@@ -1,0 +1,89 @@
+<header>
+  <authorized-header *ngIf="(profileService.profileAfterLoaded$ | async)" [profile]="profileService.profileAfterLoaded$ | async"></authorized-header>
+  <profile-header *ngIf="(profileService.profileAfterLoaded$ | async)" [profile]="profileService.profileAfterLoaded$ | async"></profile-header>
+</header>
+
+<!-- CONTENT -->
+<main class="clearfix">
+  <div class="container-fluid profile-achievement">
+    <div class="row">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12 col-sm-11 pull-right hero-box">
+            <div class="row">
+              <div class="clearfix level">
+                <div class="progress-bar progress-{{ profile?.earnedExperience / (profile?.experienceUntilNextLevel + profile?.earnedExperience) * 100 }}">
+                  <div class="level-inner-cont">
+                    <span class="level-text">Level <span class="level-number">{{ profile?.level }}</span></span>
+
+                    <span class="level-text-2">
+                      <span class="exp-number">{{ profile?.earnedExperience }}</span>
+                      <span>earned exp.</span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-xs-12 col-sm-10 col-sm-offset-1 info-box">
+                <div class="row">
+                  <div class="col-xs-12 col-sm-6 col-info">
+                    <h3 class="text-center">
+                      <img src="assets/img/points.png" alt="Icon" />
+                      AVAILABLE POINTS
+                    </h3>
+
+                    <h2 class="text-center">{{ profile?.availableSpendingPoints }}</h2>
+                  </div>
+
+                  <div class="col-xs-12 col-sm-6 col-info">
+                    <h3 class="text-center">
+                      <img src="assets/img/latest.png" alt="Icon" />
+                      Latest Achievement
+                    </h3>
+
+                    <h2 class="text-center">{{ profile?.latestAchievement }}</h2>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROFILE ACHIEVEMENT -->
+  <div class="container-fluid button-buttons">
+    <div class="row">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12 col-md-6">
+            <div class="clearfix button custome">
+              <a [routerLink]="['/edit-avatar']" class="col-xs-12 cursor-pointer">
+                <span>customize avatar</span>
+                <img src="assets/img/customize-avatar.png" alt="Avatar icon" />
+              </a>
+            </div>
+          </div>
+
+          <div class="col-xs-12 col-md-6">
+            <div class="clearfix button avatar">
+              <a [routerLink]="['/avatar-shop']" class="col-xs-12">
+                <span>avatar shop</span>
+                <img src="assets/img/avatar-shop.png" alt="Avatar icon"/>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- BIG BUTTONS -->
+
+  <profile-journalitems (callLatestUpdates)="callLatestUpdates()"></profile-journalitems>
+  <health-center [healthCenterData]="healthCenterData"></health-center>
+  <latest-updates [requestsObservables]="latestUpdatesRequests$" [username]="(profileService.profileAfterLoaded$ | async) && (profileService.profileAfterLoaded$ | async).username" [user]="(userService.user$ | async)"></latest-updates>
+</main>
+<!-- MAIN END -->
+<!-- CONTENT END -->
+<!-- FOOTER -->

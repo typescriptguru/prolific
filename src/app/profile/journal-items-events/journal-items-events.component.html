@@ -1,0 +1,171 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-5">
+      <div class="clearfix form-group">
+        <label>Event Type</label>
+
+        <select class="form-control selectpicker" [(ngModel)]="selectedEventType">
+          <option *ngFor="let type of eventTypes" [value]="type">{{ type }}</option>
+        </select>
+      </div>
+    </div>
+    <div class="col-sm-5">
+      <div class="clearfix form-group">
+        <label>Event</label>
+
+        <select class="form-control selectpicker" [(ngModel)]="selectedEventId">
+          <option value="" disabled selected></option>
+          <option *ngFor="let item of processedEvents[selectedEventType]" [value]="item.id">{{ item.eventTitle }}</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="col-sm-2">
+      <div class="clearfix form-group text-center">
+        <label></label>
+        <button type="submit" (click)="submit()" [disabled]="!selectedEventId">Submit</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="table-responsive">
+        <div *ngIf="(eventsService.eventsAreLoading$ | async)">Loading...</div>
+
+        <table class="table" *ngIf="!(eventsService.eventsAreLoading$ | async)">
+          <tbody>
+          <tr *ngFor="let event of slicedUserEvents">
+            <td>
+              <span><img src="assets/img/soccer-icon.png" alt="Icon" /></span>
+              <span>{{ event.eventTitle }}</span>
+            </td>
+            <td>
+              <span><i class="fa fa-calendar"></i></span>
+              <span>Date:</span>
+              <span>{{ event.eventDate }}</span>
+            </td>
+            <td>
+              <span><i class="fa fa-map-marker"></i></span>
+              <span>Place</span>
+              <span>{{ event.eventLocation }}</span>
+            </td>
+          </tr>
+          <!--<tr>
+              <td>
+                  <span><img src="assets/img/soccer-icon.png" alt="Icon" /></span>
+                  <span>Soccer</span>
+              </td>
+              <td>
+                  <span><i class="fa fa-calendar"></i></span>
+                  <span>Date:</span>
+                  <span>06/23/2016</span>
+              </td>
+              <td>
+                  <span><i class="fa fa-map-marker"></i></span>
+                  <span>Place</span>
+                  <span>Sarasota, FL</span>
+              </td>
+          </tr>
+          <tr>
+              <td>
+                  <span><img src="assets/img/running-icon.png" alt="Icon" /></span>
+                  <span>Running</span>
+              </td>
+              <td>
+                  <span><i class="fa fa-calendar"></i></span>
+                  <span>Date:</span>
+                  <span>06/23/2016</span>
+              </td>
+              <td>
+                  <span><i class="fa fa-map-marker"></i></span>
+                  <span>Place</span>
+                  <span>Sarasota, FL</span>
+              </td>
+          </tr>
+          <tr>
+              <td>
+                  <span><img src="assets/img/basketball-icon.png" alt="Icon" /></span>
+                  <span>Basketball</span>
+              </td>
+              <td>
+                  <span><i class="fa fa-calendar"></i></span>
+                  <span>Date:</span>
+                  <span>06/23/2016</span>
+              </td>
+              <td>
+                  <span><i class="fa fa-map-marker"></i></span>
+                  <span>Place</span>
+                  <span>Sarasota, FL</span>
+              </td>
+          </tr>
+          <tr>
+              <td>
+                  <span><img src="assets/img/football-icon.png" alt="Icon" /></span>
+                  <span>Football</span>
+              </td>
+              <td>
+                  <span><i class="fa fa-calendar"></i></span>
+                  <span>Date:</span>
+                  <span>06/23/2016</span>
+              </td>
+              <td>
+                  <span><i class="fa fa-map-marker"></i></span>
+                  <span>Place</span>
+                  <span>Sarasota, FL</span>
+              </td>
+          </tr>
+          <tr>
+              <td>
+                  <span><img src="assets/img/cycle-icon.png" alt="Icon" /></span>
+                  <span>Cycling</span>
+              </td>
+              <td>
+                  <span><i class="fa fa-calendar"></i></span>
+                  <span>Date:</span>
+                  <span>06/23/2016</span>
+              </td>
+              <td>
+                  <span><i class="fa fa-map-marker"></i></span>
+                  <span>Place</span>
+                  <span>Sarasota, FL</span>
+              </td>
+          </tr>
+          <tr>
+              <td>
+                  <span><img src="assets/img/football-icon.png" alt="Icon" /></span>
+                  <span>Football</span>
+              </td>
+              <td>
+                  <span><i class="fa fa-calendar"></i></span>
+                  <span>Date:</span>
+                  <span>06/23/2016</span>
+              </td>
+              <td>
+                  <span><i class="fa fa-map-marker"></i></span>
+                  <span>Place</span>
+                  <span>Sarasota, FL</span>
+              </td>
+          </tr>-->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="row" *ngIf="pages && pages[1]">
+    <div class="col-xs-12 text-center">
+      <span>
+        <button (click)="selectPreviousPage()" [disabled]="!hasPreviousPage()"><</button>
+      </span>
+
+      <span *ngFor="let page of pages">
+        <button (click)="changePage(page)" [disabled]="currentPage === page" [class.active]="currentPage === page">{{ page }}</button>
+      </span>
+
+      <span>
+        <button (click)="selectNextPage()" [disabled]="!hasNextPage()">></button>
+      </span>
+    </div>
+  </div>
+</div>

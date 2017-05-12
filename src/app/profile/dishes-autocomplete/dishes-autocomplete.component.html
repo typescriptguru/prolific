@@ -1,0 +1,9 @@
+<div class="dropdown">
+  <input type="text" class="form-control" placeholder="Search" [ngModel]="query" [formControl]="keyword">
+
+  <ul class="dropdown-menu" [style.display]="results && results.length ? 'block' : 'none'">
+    <li *ngFor="let item of results">
+      <a (click)="select(item)">{{ item.fields.item_name | substring:30 }}</a>
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,48 @@
+<div class="clearfix">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="container">
+        <div class="row">
+          <nav class="navbar">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <!-- ICN BAR WITH NAVAR TOGGLE END -->
+              <a [routerLink]="['/']"><img src="assets/img/profile-logo.png" alt="Logo"/></a>
+              <!-- SITE LOGO -->
+            </div>
+
+            <div class="collapse navbar-collapse" id="navbar-collapse-1">
+              <ul class="nav navbar-nav">
+                <li>
+                  <span><a><i class="fa fa-bell"></i></a></span>
+                  <span class="dropdown" dropdown role="menu">
+                    <a dropdownToggle><i class="fa fa-cog"></i></a>
+
+                    <ul dropdownMenu class="dropdown-menu">
+                      <li><a [routerLink]="['/profile', profile.username]">Profile</a></li>
+                      <li><a [routerLink]="['/edit-profile']">Edit profile</a></li>
+                      <li><a (click)="authService.logout()">Logout</a></li>
+                    </ul>
+                  </span>
+                </li>
+
+                <li>
+                  <form>
+                    <input class="form-control" type="search" placeholder="Search......" />
+                    <i class="fa fa-search"></i>
+                  </form>
+                </li>
+              </ul>
+            </div>
+            <!-- COLLAPSE NAVBAR END -->
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- HEADER END -->

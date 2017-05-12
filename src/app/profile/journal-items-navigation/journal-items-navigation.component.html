@@ -1,0 +1,32 @@
+<div class="container-fluid activity-nutrition-events">
+  <div class="row">
+    <div class="container tab-option">
+      <ul class="nav nav-tabs" role="tablist">
+        <li class="col-sm-4 active" *ngFor="let item of tabs">
+          <span (click)="activeTab = item">
+            <span>
+              <img alt="Icon" [src]="item.icon"/>
+              {{ item.title }}
+            </span>
+          </span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="clearfix tab-content">
+      <div class="clearfix tab-pane active" *ngIf="activeTab.id === 0" id="activity">
+        <activities-tab (callLatestUpdates)="callLatestUpdates.emit(null)"></activities-tab>
+      </div>
+
+      <div class="clearfix tab-pane active" *ngIf="activeTab.id === 1" id="nutrition">
+        <nutritions-tab (callLatestUpdates)="callLatestUpdates.emit(null)"></nutritions-tab>
+      </div>
+
+      <div class="clearfix tab-pane active" *ngIf="activeTab.id === 2" id="events">
+        <events-tab (callLatestUpdates)="callLatestUpdates.emit(null)"></events-tab>
+      </div>
+    </div>
+  </div>
+</div><!-- ACTIVITY NUTRITION EVENTS -->

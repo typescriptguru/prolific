@@ -1,0 +1,89 @@
+@mixin back-size{
+  background-size: cover;
+}
+@mixin color-border-transition{
+  transition: color 0.3s ease 0s, border-color 0.3s ease 0s;
+}
+@mixin bg-color-border-transition{
+  transition: background-color 0.3s ease 0s, color 0.3s ease 0s, border-color 0.3s ease 0s;
+}
+@mixin bg-color-transition{
+  transition: background-color 0.3s ease 0s, color 0.3s ease 0s;
+}
+@mixin color-transition{
+  transition: color 0.3s ease 0s;
+}
+@mixin bg-border-transition{
+  transition: background-color 0.3s ease 0s;
+}
+@mixin bg-transition{
+  transition: background-color 0.3s ease 0s;
+}
+@mixin all-transition{
+  transition: all 1s ease-in-out;
+}
+@mixin clear-both{
+  clear: both;
+  content: " ";
+  display: table;
+}
+@mixin border5{
+  border-radius: 5px;
+}
+@mixin border4{
+  border-radius: 4px;
+}
+@mixin border3{
+  border-radius: 3px;
+}
+@mixin border2{
+  border-radius: 2px;
+}
+@mixin border1{
+  border-radius: 1px;
+}
+@mixin border50{
+  border-radius: 50%;
+}
+@mixin border0{
+  border-radius: 0;
+}
+@mixin font-varela-regular{
+  font-family: 'Varela Round', 'varela_roundregular', sans-serif;
+  font-weight: 400;
+}
+@mixin font-roboto-light{
+  font-family: 'Roboto', 'robotolight', sans-serif;
+  font-weight: 300;
+}
+@mixin font-roboto-regular{
+  font-family: 'Roboto', 'robotoregular', sans-serif;
+  font-weight: 400;
+}
+@mixin font-roboto-medium{
+  font-family: 'Roboto', 'robotomedium', sans-serif;
+  font-weight: 500;
+}
+@mixin font-roboto-bold{
+  font-family: 'Roboto', 'robotobold', sans-serif;
+  font-weight: 700;
+}
+@mixin font-roboto-black{
+  font-family: 'robotoblack';
+}
+
+@mixin text-shadow02s{
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+@mixin box-shadow01s{
+  box-shadow: 0 -3px rgba(0, 0, 0, 0.1) inset;
+}
+@mixin box-shadow02s{
+  box-shadow: 0 -3px rgba(0, 0, 0, 0.2) inset;
+}
+@mixin transition02s{
+  transition: all 0.2s ease-out 0s;
+}
+@mixin transition03s{
+  transition: all 0.3s ease-in-out 0s;
+}

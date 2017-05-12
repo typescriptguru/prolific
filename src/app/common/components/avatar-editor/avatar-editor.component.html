@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="avatar-container">
+    <div class="clearfix design-avatar">
+      <div class="avatar-box">
+        <div class="avatar-img">
+          <img class="img-responsive-item" *ngIf="singUpModel.baseModel" [src]="singUpModel.baseModel.nakedImageSource">
+
+          <div class="img-responsive" alt="Avatar Image">
+            <img class="img-responsive-item" [src]="getCustomizationBackground('hat')">
+            <img class="img-responsive-item" [src]="getCustomizationBackground('shirt')">
+            <img class="img-responsive-item" [src]="getCustomizationBackground('pant')">
+          </div>
+
+          <div class="arrow arrow-icon-1 left" role="button" (click)="previousOption('hat')">
+            <i class="fa fa-angle-left"></i>
+          </div>
+
+          <div class="arrow arrow-icon-1 right" role="button" (click)="nextOption('hat')">
+            <i class="fa fa-angle-right"></i>
+          </div>
+
+          <div class="arrow arrow-icon-3 left" role="button" (click)="previousOption('shirt')">
+            <i class="fa fa-angle-left"></i>
+          </div>
+
+          <div class="arrow arrow-icon-3 right" role="button" (click)="nextOption('shirt')">
+            <i class="fa fa-angle-right"></i>
+          </div>
+
+          <div class="arrow arrow-icon-4 left" role="button" (click)="previousOption('pant')">
+            <i class="fa fa-angle-left"></i>
+          </div>
+
+          <div class="arrow arrow-icon-4 right" role="button" (click)="nextOption('pant')">
+            <i class="fa fa-angle-right"></i>
+          </div>
+        </div><!-- END AVATAR-IMG -->
+      </div><!-- END AVATAR-BOX -->
+    </div>
+  </div>
+</div>
+<!-- END CONTAINER -->

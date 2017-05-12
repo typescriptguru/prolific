@@ -1,0 +1,432 @@
+<!-- HEADER -->
+<header class="clearfix header-4events">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="container">
+        <div class="row">
+          <nav class="navbar">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button><!-- ICN BAR WITH NAVAR TOGGLE END -->
+              <a [routerLink]="['Home']"><img src="assets/img/profile-logo.png" alt="Logo" /></a><!-- SITE LOGO -->
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-collapse-1">
+              <ul class="nav navbar-nav">
+                <li>
+                  <span><a href="#"><i class="fa fa-bell"></i></a></span>
+                  <span><a href="#"><i class="fa fa-cog"></i></a></span>
+                </li>
+                <li>
+                  <form>
+                    <input class="form-control" type="search" placeholder="Search......" />
+                    <i class="fa fa-search"></i>
+                  </form>
+                </li>
+              </ul>
+            </div><!-- COLLAPSE NAVBAR END -->
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div><!-- HEADER END -->
+</header>
+<!-- HEADER END -->
+<main class="clearfix">
+  <div class="container-fluid profile-achievement profile-events4">
+    <div class="row">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12 col-sm-12 col-md-11 hero-box pull-right">
+            <div class="row">
+              <div class="clearfix level">
+                <div class="progress-bar" data-percent="0" data-duration="1000" data-color="#aeb42b,#c12f39">
+                  <img src="assets/img/officeman.png" alt="Avatar Image" />
+                </div>
+              </div>
+              <div class="col-xs-12 col-sm-12 col-md-11 col-md-offset-1">
+                <h1>
+                  <span>Dare to be Great</span>
+                  <span><a href="#">Sign Up</a></span>
+                  <span><a href="#">See who is going</a></span>
+                </h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div><!-- PROFILE ACHIEVEMENT -->
+  <div class="container-fluid events-description">
+    <div class="row">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12 col-md-4">
+            <h3>EVENT DESCRIPTION</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+              <span><a href="#">Read More <i class="fa fa-angle-right"></i></a></span>
+            </p>
+          </div>
+          <div class="col-xs-12 col-md-4">
+            <h3>ACHIEVEMENT</h3>
+            <h2>DARING Achiever</h2>
+          </div>
+          <div class="col-xs-12 col-md-4">
+            <h3>reward gear</h3>
+            <p>
+              <span><img src="assets/img/icon-gear-1.png" alt="Icon" /></span>
+              <span><img src="assets/img/icon-gear-2.png" alt="Icon" /></span>
+              <span><img src="assets/img/icon-gear-3.png" alt="Icon" /></span>
+              <span><img src="assets/img/icon-gear-4.png" alt="Icon" /></span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div><!-- EVENT DESCRIPTION -->
+  <div class="container-fluid video events">
+    <div class="row">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12">
+            <h1 class="text-center">our videos</h1>
+            <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod<br />tempor incididunt ut labore et dolore magna aliqua.</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="youtube-video">
+              <div id="video-carousel" class="carousel slide" data-ride="carousel" data-interval="false">
+                <div class="carousel-inner" role="listbox">
+                  <div class="item active">
+                    <img src="assets/img/youtube-poster.png" alt="/content/images" class="img-responsive" width="100%" /><!-- change image to you tube link -->
+                  </div>
+                  <div class="item">
+                    <img src="assets/img/youtube-poster.png" alt="/content/images" class="img-responsive" width="100%" /><!-- change image to you tube link -->
+                  </div>
+                  <div class="item">
+                    <img src="assets/img/youtube-poster.png" alt="/content/images" class="img-responsive" width="100%" /><!-- change image to you tube link -->
+                  </div>
+                </div>
+                <div class="carousel-controls left" data-slide="prev" role="button" data-target="#video-carousel">
+                  <i class="fa fa-angle-left"></i>
+                </div>
+                <div class="carousel-controls right" data-target="#video-carousel" role="button" data-slide="next">
+                  <i class="fa fa-angle-right"></i>
+                </div>
+              </div>
+            </div><!-- video will run with frame on desktop -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div><!-- VIDEO -->
+  <div class="container-fluid location-events">
+    <div class="row">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12">
+            <h1 class="text-center">Location</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div id="mapcanvas" style="width: 100%;height: 500px;"></div>
+    </div>
+  </div>
+  <div class="container-fluid latest-update">
+    <div class="row">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12">
+            <h1 class="text-center">Latest Updates</h1>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12 col-sm-4">
+            <div class="update-box nutrition">
+              <h3>
+                <span>Oceansize Tree</span>
+                <span>the conqueror</span>
+                <img src="assets/img/slider-list-item-4.png" alt="Icon" />
+              </h3>
+              <img src="assets/img/avatar-update.png" class="img-responsive" width="100%" />
+              <div class="clearfix bottom-box">
+                <h1 class="text-center">NUTRITION</h1>
+                <h3 class="text-center">
+                  <span><img src="assets/img/oatmeal-icon.png" alt="Icon" />Oatmeal</span>
+                </h3>
+                <p class="update-one">
+                                            <span>
+                                                <span>portion</span>
+                                                <span>2/3 cup</span>
+                                            </span>
+                  <span>
+                                                <span>calories</span>
+                                                <span>204</span>
+                                            </span>
+                </p>
+                <p class="update-two">
+                                            <span>
+                                                <a href="#">
+                                                    <i class="fa fa-heart"></i>27
+                                                </a>
+                                            </span>
+                  <span>
+                                                <a href="#">
+                                                    <i class="fa fa-share-alt"></i>3
+                                                </a>
+                                            </span>
+                  <span>
+                                                <a href="#">
+                                                    <i class="fa fa-comment"></i>18
+                                                </a>
+                                            </span>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-4">
+            <div class="update-box activity">
+              <h3>
+                <span>Oceansize Tree</span>
+                <span>the conqueror</span>
+                <img src="assets/img/slider-list-item-5.png" alt="Icon" />
+              </h3>
+              <img src="assets/img/avatar-update.png" class="img-responsive" width="100%" />
+              <div class="clearfix bottom-box">
+                <h1 class="text-center">activity</h1>
+                <h3 class="text-center">
+                  <span><img src="assets/img/oatmeal-icon.png" alt="Icon" />Oatmeal</span>
+                </h3>
+                <p class="update-one">
+                                            <span>
+                                                <span>portion</span>
+                                                <span>2/3 cup</span>
+                                            </span>
+                  <span>
+                                                <span>calories</span>
+                                                <span>204</span>
+                                            </span>
+                </p>
+                <p class="update-two">
+                                            <span>
+                                                <a href="#">
+                                                    <i class="fa fa-heart"></i>27
+                                                </a>
+                                            </span>
+                  <span>
+                                                <a href="#">
+                                                    <i class="fa fa-share-alt"></i>3
+                                                </a>
+                                            </span>
+                  <span>
+                                                <a href="#">
+                                                    <i class="fa fa-comment"></i>18
+                                                </a>
+                                            </span>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-4">
+            <div class="update-box events">
+              <h3>
+                <span>Oceansize Tree</span>
+                <span>the conqueror</span>
+                <img src="assets/img/slider-list-item-3.png" alt="Icon" />
+              </h3>
+              <img src="assets/img/avatar-update.png" class="img-responsive" width="100%" />
+              <div class="clearfix bottom-box">
+                <h1 class="text-center">event</h1>
+                <h3 class="text-center">
+                  <span><img src="assets/img/oatmeal-icon.png" alt="Icon" />Oatmeal</span>
+                </h3>
+                <p class="update-one">
+                                            <span>
+                                                <span>portion</span>
+                                                <span>2/3 cup</span>
+                                            </span>
+                  <span>
+                                                <span>calories</span>
+                                                <span>204</span>
+                                            </span>
+                </p>
+                <p class="update-two">
+                                            <span>
+                                                <a href="#">
+                                                    <i class="fa fa-heart"></i>27
+                                                </a>
+                                            </span>
+                  <span>
+                                                <a href="#">
+                                                    <i class="fa fa-share-alt"></i>3
+                                                </a>
+                                            </span>
+                  <span>
+                                                <a href="#">
+                                                    <i class="fa fa-comment"></i>18
+                                                </a>
+                                            </span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12 text-center">
+            <a class="load-more" href="#">View More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main><!-- MAIN END -->
+<!-- CONTENT END -->
+<header class="clearfix">
+  <common-header>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="container">
+          <div class="row">
+            <nav class="navbar header-navbar">
+              <div class="navbar-header">
+                <button aria-expanded="false" class="navbar-toggle collapsed" data-target="#navbar-collapse-1" data-toggle="collapse" type="button">
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+                <a href=""><img alt="Logo" src="assets/img/logo.png"></a>
+              </div>
+              <div class="collapse navbar-collapse" id="navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                  <li><a href="">Home</a></li>
+                  <li><a href="#/events">About Us</a></li>
+                  <li>
+                    <!--template bindings={}-->
+                  </li>
+                  <li>
+                    <!--template bindings={}--><a>Log-in</a></li>
+                  <li>
+                    <!--template bindings={}--><a href="#/registration">Sign Up</a></li>
+                  <li>
+                    <!--template bindings={}-->
+                  </li>
+                </ul>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+  </common-header>
+  <div class="container-fluid header-about-us">
+    <div class="row">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12">
+            <h1>About Us</h1>
+          </div>
+        </div>
+      </div>
+      <div class="container container-bg-img">
+        <div class="row">
+          <div class="col-xs-12 col-md-8 col-lg-10 col-md-offset-4 col-lg-offset-2">
+            <img alt="" class="img-responsive" src="assets/img/about-us-header-bg-1.png">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="clearfix">
+  <div class="container-fluid about-us-section-wide">
+    <div class="row">
+      <div class="container container-bg">
+        <div class="row">
+          <div class="col-xs-12">
+            <h1 class="text-center">Prolific is a national non-profit organization that is dedicated and determined to helping change our youth’s overall health and well-being.</h1>
+            <p class="text-center">We are committed to providing them with the tools, inspiration, education and knowledge that they need to create a bright future. How are we planning on doing that? By focusing on four major areas: nutrition, fitness, community and inspiration. We feel strongly that focusing in on and helping our youth in those four specific areas will produce incredible results and create healthy habits that will last a lifetime.</p>
+          </div>
+        </div>
+        <div class="row row-ava">
+          <div class="col-xs-5">
+            <p class="text-right"><img alt="Avatar Image" class="img-responsive pull-right" src="assets/img/gamification-avatar-1.png" data-pin-nopin="true"></p>
+          </div>
+          <div class="col-xs-2">
+          </div>
+          <div class="col-xs-5">
+            <p class="text-left"><img alt="Avatar Image" class="img-responsive pull-left" src="assets/img/gamification-avatar-2.png"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid about-us-section-half">
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 img-bg">
+        <div class="mentors-avatar">
+          <img alt="Image" class="img-responsive" src="assets/img/mentors-avatar.png">
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-6 bg">
+        <div class="col-l">
+          <h1 class="text-left">It’s no secret that Americans are currently experiencing a wide variety of health challenges.</h1>
+          <p class="text-left">From obesity, to diabetes to an increase in children with autism, we are at a serious crossroads. We can’t just sit back and let this happen, Prolific feels a sense of urgency to help get our youth’s health back on track. Prolific is diving in and taking the lead to encourage and show children how important being healthy, fit and happy is to creating a successful life. We know this won’t happen overnight but with your help and your constant dedication, together we will be what our youth needs to turn things around for the better.</p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="container">
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid about-us-team">
+    <div class="row">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12 text-center">
+            <h1>Prolific Team</h1>
+            <div class="row">
+              <div class="col-xs-12 col-sm-4 text-center">
+                <img alt="Image Icon" class="mentors-icon" src="assets/img/avatar-owner.png" data-pin-nopin="true">
+                <p>Drisan James</p>
+                <span>CEO</span>
+              </div>
+              <div class="col-xs-12 col-sm-4 text-center">
+                <img alt="Image Icon" class="mentors-icon" src="assets/img/avatar-owner.png" data-pin-nopin="true">
+                <p>Ryan Smith</p>
+                <span>CTO</span>
+              </div>
+              <div class="col-xs-12 col-sm-4 text-center">
+                <img alt="Image Icon" class="mentors-icon" src="assets/img/avatar-owner.png" data-pin-nopin="true">
+                <p>KC Driscoll</p>
+                <span>CBO</span>
+              </div>
+              <div class="col-xs-12 col-sm-4 text-center">
+                <img alt="Image Icon" class="mentors-icon" src="assets/img/avatar-owner.png" data-pin-nopin="true">
+                <p>Rick Cota</p>
+                <span>CIO</span>
+              </div>
+              <div class="col-xs-12 col-sm-4 text-center">
+                <img alt="Image Icon" class="mentors-icon" src="assets/img/avatar-owner.png" data-pin-nopin="true">
+                <p>Sabrina James</p>
+                <span>COO</span>
+              </div>
+              <div class="col-xs-12 col-sm-4 text-center">
+                <img alt="Image Icon" class="mentors-icon" src="assets/img/avatar-owner.png" data-pin-nopin="true">
+                <p>Kate Harper</p>
+                <span>MARKETING DIRECTOR</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

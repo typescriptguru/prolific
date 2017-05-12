@@ -1,0 +1,84 @@
+<router-outlet></router-outlet>
+
+<!-- FOOTER -->
+<footer class="clearfix">
+  <div class="container-fluid footer-top">
+    <div class="row">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12">
+            <p><a href="#"><img src="assets/img/footer-logo.png" alt="Footer Logo" /></a></p>
+            <p>
+              <span><a [routerLink]="['/']">Home</a></span>
+              <span><a [routerLink]="['/about']">About US</a></span>
+              <span><a [routerLink]="['/mentor']">Mentors</a></span>
+              <span><a href="#">Contact</a></span>
+              <span><a href="#">Login</a></span>
+              <span><a [routerLink]="['/registration']">Sign Up</a></span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid footer-bottom">
+    <div class="row">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12 col-sm-6">
+            <ul class="list-inline">
+              <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+              <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+              <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+              <li><a href="#"><i class="fa fa-pinterest-p"></i></a></li>
+              <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+              <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+            </ul>
+          </div>
+          <div class="col-xs-12 col-sm-6">
+            <p>
+              <span><a>&copy; Prolific</a></span>
+              <span><a>2015</a></span>
+              <span><a href="#">Terms</a></span>
+              <span><a href="#">Privicy</a></span>
+            </p>
+          </div>
+        </div>
+        <img src="assets/img/footer-avater.png" alt="Avata Image" class="footer-avater" />
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- FOOTER END -->
+
+<ng2-toasty></ng2-toasty>
+<prolific-big-loader></prolific-big-loader>
+
+<div class="modal fade" bsModal #loginPopup="bs-modal" [config]="{ backdrop: 'static' }" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title pull-left">Login</h4>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="loginPopup.hide()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <form [formGroup]="loginForm" class="form-horizontal" (ngSubmit)="closeLoginPopup()" novalidate>
+          <extended-input [labelText]="'Username (*)'" [dirty]="loginForm.controls.username.dirty" [inputErrors]="loginForm.controls.username.errors" [errorDefs]="{ required: 'username is required' }" [required]="true">
+            <input type="text" class="form-control" formControlName="username">
+          </extended-input>
+
+          <extended-input [labelText]="'Password (*)'" [dirty]="loginForm.controls.password.dirty" [inputErrors]="loginForm.controls.password.errors" [errorDefs]="{ required: 'password is required' }" [required]="true">
+            <input type="password" class="form-control" formControlName="password">
+          </extended-input>
+
+          <button type="submit" (click)="closeLoginPopup()" [disabled]="!loginForm.valid" class="btn btn-primary btn-block btn-lg">
+            <i class="fa fa-sign-in"></i>&nbsp;Log-in
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
